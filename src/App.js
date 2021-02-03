@@ -11,8 +11,11 @@ function App () {
   }
 
   const compartir = async () => {
-    try {
-      if (navigator.canShare && navigator.canShare({ files })) {
+    try
+    {
+      alert(navigator.canShare)
+      
+      if (navigator.canShare) {
         navigator
           .share(shareData)
           .then(() => console.log('Share was successful.'))
