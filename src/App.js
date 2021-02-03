@@ -1,37 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
 
-function App() {
+function App () {
+  const files = ['https://expobebe.fra1.digitaloceanspaces.com/macrotextura_1280.png']
 
   const shareData = {
-  title: 'MDN',
-  text: 'Learn web development on MDN!',
-  url: '/logo192.png',
-}
+    files,
+    title: 'Esta es una prueba de compartir',
+    text: 'Compartemeeeee'
+  }
 
-
-  const compartir = async () =>{
+  const compartir = async () => {
     try {
-      await navigator.share(shareData)
-      
+      if (navigator.canShare && navigator.canShare({ files })) {
+        navigator
+          .share(shareData)
+          .then(() => console.log('Share was successful.'))
+          .catch(error => console.log('Sharing failed', error))
+      } else {
+        console.log(`Your system doesn't support sharing files.`)
+      }
     } catch (error) {
-      alert("Error")
-      console.log(error);
+      alert('Error')
+      console.log(error)
     }
   }
 
-
   return (
-    <div className="App">
-
+    <div className='App'>
       <div>
-        <h1>Comparte esta foto</h1>    
-        <img src="/logo192.png" alt="asdf"/>
+        <h1>Comparte esta foto</h1>
+        <img src='/logo192.png' alt='asdf' />
       </div>
-      <button onClick={compartir} class="btn btn-primary btn-lg">Compartir</button>
-    
+      <button onClick={compartir} class='btn btn-primary btn-lg'>
+        Compartir
+      </button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
