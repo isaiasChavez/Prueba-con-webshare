@@ -6,7 +6,6 @@ function App() {
   const shareData = {
   title: 'Holaaa',
   text: 'Compartemeeee!',
-  url: 'https://expobebe.fra1.digitaloceanspaces.com/macrotextura_1280.png',
 }
 
 
@@ -15,6 +14,9 @@ function App() {
     var image = document.createElement("img");
     image.src = "/logo192.png";
     shareData.files = [image]
+
+    let mensaje = navigator.canShare ? 'si' :'no'
+    alert("Can share?",mensaje)
 
     try {
       await navigator.share(shareData)
