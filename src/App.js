@@ -13,11 +13,9 @@ function App () {
   const compartir = async () => {
     try
     {
-      alert(navigator.canShare)
 
       if( navigator.canShare )
       {
-        alert("HOla")
         navigator
           .share(shareData)
           .then(() => console.log('Share was successful.'))
