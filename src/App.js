@@ -14,8 +14,10 @@ function App () {
     try
     {
       alert(navigator.canShare)
-      
-      if (navigator.canShare) {
+
+      if( navigator.canShare )
+      {
+        alert("HOla")
         navigator
           .share(shareData)
           .then(() => console.log('Share was successful.'))
@@ -24,7 +26,7 @@ function App () {
         alert(`Your system doesn't support sharing files.`)
       }
     } catch (error) {
-      alert('Error')
+      alert('Error',error.message)
       console.log(error)
     }
   }
