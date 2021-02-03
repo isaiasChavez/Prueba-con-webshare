@@ -11,6 +11,11 @@ function App() {
 
 
   const compartir = async () =>{
+
+    var image = document.createElement("img");
+    image.src = "/logo192.png";
+    shareData.files = [image]
+
     try {
       await navigator.share(shareData)
       
