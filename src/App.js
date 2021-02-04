@@ -13,10 +13,11 @@ function App () {
     const image = URL.createObjectURL(imagenes[0])
     let i = image.replace('blob:',"")
     console.log(image);
+
     const shareData = {
       title: 'Pictures',
       text: 'Our Pictures.',
-      url:i
+      url:`https://pruebashare.netlify.app/logo192.png`
     } 
     alert(image)
     try {
