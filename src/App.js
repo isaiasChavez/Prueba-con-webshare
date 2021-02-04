@@ -13,10 +13,18 @@ function App () {
     const shareData = {
       files: [imagenes[0]],
       title: 'Pictures',
-      text: 'Our Pictures.'
+      text: 'Our Pictures.',
+      url:"/logo192.png"
     }
     try {
-      await navigator.share(shareData)
+      if (navigator.canShare && navigator.canShare({ files:[imagenes[0]]  })) {
+        navigator
+          .share(shareData)
+          .then(() => console.log('Share was successful.'))
+          .catch(error => console.log('Sharing failed', error))
+      } else {
+        alert(`Your system doesn't support sharing files.`)
+      }
     } catch (error) {
       alert('Error', error.message)
       console.log(error)
