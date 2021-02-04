@@ -17,7 +17,7 @@ function App () {
       url:"/logo192.png"
     }
     try {
-      if (navigator.canShare && navigator.canShare({ files:[imagenes[0]]  })) {
+      if (navigator.canShare && navigator.canShare({ files:imagenes  })) {
         navigator
           .share(shareData)
           .then(() => console.log('Share was successful.'))
