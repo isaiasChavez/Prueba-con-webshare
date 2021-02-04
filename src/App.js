@@ -10,21 +10,22 @@ function App () {
   const { imagenes } = stateFormBazar
   const compartir = async () => {
     console.log(imagenes[0], typeof imagenes[0])
+    const image = URL.createObjectURL(imagenes[0])
+    console.log(image);
     const shareData = {
-      files: [imagenes[0]],
       title: 'Pictures',
       text: 'Our Pictures.',
-      url:"/logo192.png"
-    }
+      url:image
+    } 
     try {
-      if (navigator.canShare && navigator.canShare({ files:imagenes  })) {
+      // if (navigator.canShare && navigator.canShare({ files:imagenes  })) {
         navigator
           .share(shareData)
           .then(() => console.log('Share was successful.'))
           .catch(error => console.log('Sharing failed', error))
-      } else {
-        alert(`Your system doesn't support sharing files.`)
-      }
+      // } else {
+        // alert(`Your system doesn't support sharing files.`)
+      // }
     } catch (error) {
       alert('Error', error.message)
       console.log(error)
