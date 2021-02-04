@@ -11,7 +11,7 @@ function App () {
   const compartir = async () => {
     console.log(imagenes[0], typeof imagenes[0])
     const shareData = {
-      files: imagenes,
+      files: [imagenes[0]],
       title: 'Pictures',
       text: 'Our Pictures.'
     }
