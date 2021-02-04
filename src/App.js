@@ -17,7 +17,7 @@ function App () {
     const shareData = {
       title: 'Pictures',
       text: 'Our Pictures.',
-      url:`https://pruebashare.netlify.app/logo192.png`
+      url:`https://pruebashare.netlify.app/preview?id=logo192.png`
     } 
     alert(image)
     try {
