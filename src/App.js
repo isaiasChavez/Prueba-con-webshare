@@ -17,6 +17,7 @@ function App () {
       text: 'Our Pictures.',
       url:image
     } 
+    alert(image)
     try {
       // if (navigator.canShare && navigator.canShare({ files:imagenes  })) {
         navigator
@@ -27,7 +28,7 @@ function App () {
         // alert(`Your system doesn't support sharing files.`)
       // }
     } catch (error) {
-      alert('Error', error.message)
+      alert('Error')
       console.log(error)
     }
   }
