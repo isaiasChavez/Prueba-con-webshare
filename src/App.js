@@ -6,17 +6,11 @@ function App() {
   const shareData = {
   title: 'Holaaa',
   text: 'Compartemeeee!',
+  url: '/logo192.png',
 }
 
 
   const compartir = async () =>{
-
-    var image = document.createElement("img");
-    image.src = "/logo192.png";
-    shareData.files = [image]
-
-    let mensaje = navigator.canShare ? 'si' :'no'
-    alert("Can share?",mensaje)
 
     try {
       await navigator.share(shareData)
