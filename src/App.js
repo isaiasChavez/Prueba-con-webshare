@@ -11,11 +11,12 @@ function App () {
   const compartir = async () => {
     console.log(imagenes[0], typeof imagenes[0])
     const image = URL.createObjectURL(imagenes[0])
+    let i = image.replace('blob:',"")
     console.log(image);
     const shareData = {
       title: 'Pictures',
       text: 'Our Pictures.',
-      url:image
+      url:i
     } 
     alert(image)
     try {
